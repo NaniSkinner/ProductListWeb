@@ -29,7 +29,7 @@ Users should be able to:
 
 ### Screenshot
 
-![Product List with Cart Solution](./screenshot.jpg)
+_Screenshot will be added after deployment_
 
 ### Links
 
