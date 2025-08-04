@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Product list with cart</title>
+
+    <!-- CSS Styles -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <section class="products-section">
+        <h1 class="products-title">Desserts</h1>
+
+        <div class="products-grid" id="products-grid">
+          <!-- Product cards will be dynamically generated here -->
+        </div>
+
+        <!-- Hidden product card template -->
+        <template id="product-card-template">
+          <article class="product-card">
+            <div class="product-image-container">
+              <picture class="product-image">
+                <source
+                  media="(min-width: 1024px)"
+                  srcset=""
+                  class="desktop-image"
+                />
+                <source
+                  media="(min-width: 768px)"
+                  srcset=""
+                  class="tablet-image"
+                />
+                <img src="" alt="" class="mobile-image" />
+              </picture>
+
+              <!-- Add to Cart button (default state) -->
+              <button class="add-to-cart-btn" data-product-id="">
+                <img
+                  src="./assets/images/icon-add-to-cart.svg"
+                  alt=""
+                  class="add-to-cart-icon"
+                />
+                <span>Add to Cart</span>
+              </button>
+
+              <!-- Quantity controls (hidden by default) -->
+              <div class="quantity-controls" style="display: none">
+                <button class="quantity-btn decrement-btn" data-product-id="">
+                  <img
+                    src="./assets/images/icon-decrement-quantity.svg"
+                    alt="Decrease quantity"
+                  />
+                </button>
+                <span class="quantity-display">1</span>
+                <button class="quantity-btn increment-btn" data-product-id="">
+                  <img
+                    src="./assets/images/icon-increment-quantity.svg"
+                    alt="Increase quantity"
+                  />
+                </button>
+              </div>
+            </div>
+
+            <div class="product-info">
+              <p class="product-category"></p>
+              <h3 class="product-name"></h3>
+              <p class="product-price"></p>
+            </div>
+          </article>
+        </template>
+      </section>
+
+      <aside class="cart-section">
+        <div class="cart">
+          <h2 class="cart-title">Your Cart (<span id="cart-count">0</span>)</h2>
+
+          <!-- Empty cart state -->
+          <div class="cart-empty" id="cart-empty">
+            <img
+              src="./assets/images/illustration-empty-cart.svg"
+              alt="Empty cart illustration"
+              class="cart-empty-image"
+            />
+            <p class="cart-empty-message">Your added items will appear here</p>
+          </div>
+
+          <!-- Cart items container -->
+          <div class="cart-items" id="cart-items">
+            <!-- Cart items will be dynamically generated here -->
+          </div>
+
+          <!-- Order total section -->
+          <div class="cart-total" id="cart-total" style="display: none">
+            <div class="order-total">
+              <span class="order-total-label">Order Total</span>
+              <span class="order-total-amount" id="order-total-amount"
+                >$0.00</span
+              >
+            </div>
+
+            <div class="carbon-neutral">
+              <img
+                src="./assets/images/icon-carbon-neutral.svg"
+                alt="Carbon neutral"
+                class="carbon-neutral-icon"
+              />
+              <span class="carbon-neutral-text"
+                >This is a <strong>carbon-neutral</strong> delivery</span
+              >
+            </div>
+
+            <button class="confirm-order-btn" id="confirm-order-btn">
+              Confirm Order
+            </button>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <!-- Order Confirmation Modal -->
+    <div class="modal-overlay" id="order-modal" style="display: none">
+      <div class="modal-content">
+        <div class="modal-header">
+          <img
+            src="./assets/images/icon-order-confirmed.svg"
+            alt="Order confirmed"
+            class="order-confirmed-icon"
+          />
+          <h2 class="modal-title">Order Confirmed</h2>
+          <p class="modal-subtitle">We hope you enjoy your food!</p>
+        </div>
+
+        <div class="modal-order-summary">
+          <div class="order-items" id="modal-order-items">
+            <!-- Order items will be dynamically generated here -->
+          </div>
+
+          <div class="modal-order-total">
+            <span class="modal-total-label">Order Total</span>
+            <span class="modal-total-amount" id="modal-total-amount"
+              >$0.00</span
+            >
+          </div>
+        </div>
+
+        <button class="start-new-order-btn" id="start-new-order-btn">
+          Start New Order
+        </button>
+      </div>
+    </div>
+
+    <!-- Hidden template for modal order items -->
+    <template id="modal-item-template">
+      <div class="modal-order-item">
+        <div class="modal-item-info">
+          <img src="" alt="" class="modal-item-thumbnail" />
+          <div class="modal-item-details">
+            <h4 class="modal-item-name"></h4>
+            <div class="modal-item-pricing">
+              <span class="modal-item-quantity"></span>
+              <span class="modal-item-price"></span>
+            </div>
+          </div>
+        </div>
+        <span class="modal-item-total"></span>
+      </div>
+    </template>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>

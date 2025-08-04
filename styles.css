@@ -1,0 +1,43 @@
+/* Frontend Mentor - Product list with cart */
+
+/* CSS Custom Properties */
+:root {
+  /* Colors from style guide */
+  --red: hsl(14, 86%, 42%);
+  --green: hsl(159, 69%, 38%);
+  --rose-50: hsl(20, 50%, 98%);
+  --rose-100: hsl(13, 31%, 94%);
+  --rose-300: hsl(14, 25%, 72%);
+  --rose-400: hsl(7, 20%, 60%);
+  --rose-500: hsl(12, 20%, 44%);
+  --rose-900: hsl(14, 65%, 9%);
+
+  /* Typography */
+  --font-family: "Red Hat Text", sans-serif;
+  --font-size-base: 16px;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Breakpoints */
+  --mobile: 375px;
+  --desktop: 1440px;
+}
+
+/* CSS Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  line-height: 1.5;
+  color: var(--rose-900);
+  background-color: var(--rose-50);
+}
+
+/* Styles will be added in Phase 3 CSS tasks */
